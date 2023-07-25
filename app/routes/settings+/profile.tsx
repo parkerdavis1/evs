@@ -233,7 +233,7 @@ export default function EditUserProfile() {
 							Account
 						</legend>
 						<Field
-							className="col-span-3"
+							className="col-span-6 sm:col-span-3"
 							labelProps={{
 								htmlFor: fields.username.id,
 								children: 'Username',
@@ -242,13 +242,13 @@ export default function EditUserProfile() {
 							errors={fields.username.errors}
 						/>
 						<Field
-							className="col-span-3"
+							className="col-span-6 sm:col-span-3"
 							labelProps={{ htmlFor: fields.name.id, children: 'Name' }}
 							inputProps={conform.input(fields.name)}
 							errors={fields.name.errors}
 						/>
 						<Field
-							className="col-span-3"
+							className="col-span-6 sm:col-span-3"
 							labelProps={{ htmlFor: fields.email.id, children: 'Email' }}
 							inputProps={{
 								...conform.input(fields.email),
@@ -257,22 +257,25 @@ export default function EditUserProfile() {
 							}}
 							errors={fields.email.errors}
 						/>
-						<Field 
-							className="col-span-3"
-							labelProps={{ htmlFor: fields.phone.id, children: "Phone Number"}}
+						<Field
+							className="col-span-6 sm:col-span-3"
+							labelProps={{
+								htmlFor: fields.phone.id,
+								children: 'Phone Number',
+							}}
 							inputProps={{
 								...conform.input(fields.phone, { type: 'tel' }),
 							}}
 							errors={fields.phone.errors}
 						/>
-						<div className="col-span-3"></div>
+						<div className="col-span-6 sm:col-span-3"></div>
 
 						<div className="col-span-6 mb-6 mt-6 h-1 border-b-[1.5px]" />
 						<legend className="col-span-6 pb-6 text-lg text-night-200">
 							Additional Information
 						</legend>
 						<Field
-							className="col-span-3"
+							className="col-span-6 sm:col-span-3"
 							labelProps={{
 								htmlFor: fields.birthdate.id,
 								children: 'Birthdate',
@@ -284,7 +287,7 @@ export default function EditUserProfile() {
 							errors={fields.birthdate.errors}
 						/>
 						<Field
-							className="col-span-3"
+							className="col-span-6 sm:col-span-3"
 							labelProps={{
 								htmlFor: fields.height.id,
 								children: 'Height (inches)',
@@ -296,7 +299,7 @@ export default function EditUserProfile() {
 							errors={fields.height.errors}
 						/>
 						<Field
-							className="col-span-3"
+							className="sm:vcol-span-3 col-span-6"
 							labelProps={{
 								htmlFor: fields.yearsOfExperience.id,
 								children: 'Years of experience with horses',
@@ -309,38 +312,36 @@ export default function EditUserProfile() {
 						/>
 
 						<div className="col-span-6 mb-6 mt-6 h-1 border-b-[1.5px]" />
-						<fieldset className="col-span-6">
+						<fieldset className="col-span-6 grid grid-cols-6 gap-x-10">
 							<legend className="pb-6 text-lg text-night-200">
 								Change password
 							</legend>
-							<div className="flex justify-between gap-10">
-								<Field
-									className="flex-1"
-									labelProps={{
-										htmlFor: fields.currentPassword.id,
-										children: 'Current Password',
-									}}
-									inputProps={{
-										...conform.input(fields.currentPassword, {
-											type: 'password',
-										}),
-										autoComplete: 'current-password',
-									}}
-									errors={fields.currentPassword.errors}
-								/>
-								<Field
-									className="flex-1"
-									labelProps={{
-										htmlFor: fields.newPassword.id,
-										children: 'New Password',
-									}}
-									inputProps={{
-										...conform.input(fields.newPassword, { type: 'password' }),
-										autoComplete: 'new-password',
-									}}
-									errors={fields.newPassword.errors}
-								/>
-							</div>
+							<Field
+								className="col-span-6 sm:col-span-3"
+								labelProps={{
+									htmlFor: fields.currentPassword.id,
+									children: 'Current Password',
+								}}
+								inputProps={{
+									...conform.input(fields.currentPassword, {
+										type: 'password',
+									}),
+									autoComplete: 'current-password',
+								}}
+								errors={fields.currentPassword.errors}
+							/>
+							<Field
+								className="col-span-6 sm:col-span-3"
+								labelProps={{
+									htmlFor: fields.newPassword.id,
+									children: 'New Password',
+								}}
+								inputProps={{
+									...conform.input(fields.newPassword, { type: 'password' }),
+									autoComplete: 'new-password',
+								}}
+								errors={fields.newPassword.errors}
+							/>
 						</fieldset>
 						<Link
 							preventScrollReset
